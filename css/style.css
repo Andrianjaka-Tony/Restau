@@ -1,0 +1,201 @@
+:root {
+  font-size: 16px;
+}
+
+body {
+  background: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+  padding: 1px 0;
+}
+
+.overflow-animation {
+  transform: translateY(110%);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-family: Poppins-extraLight;
+}
+
+.text {
+  font-size: 1rem;
+  font-family: Poppins-light;
+}
+
+.header {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .overflow-hidden {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header .title,
+.header .text {
+  width: 90%;
+  text-align: center;
+}
+
+.header span:nth-child(1) {
+  margin-top: -80px;
+}
+
+.logo {
+  height: 100px;
+}
+
+.menu {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu .title {
+  margin-top: 20px;
+}
+
+.menu-container {
+  width: 90%;
+  height: 40px;
+  padding: 10px;
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+  min-height: 100px;
+}
+
+.menu-card {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-card .menu-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.menu-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 40px);
+  width: calc(100% - 40px);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.855), transparent);
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.3s;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  color: white;
+  padding: 20px;
+  gap: 3px;
+}
+
+.menu-name {
+  font-family: Poppins-light;
+  font-size: 1.2rem;
+}
+
+.emnu-price {
+  font-family: Poppins-light;
+  font-size: 0.8rem;
+}
+
+.menu-card:hover .menu-info {
+  opacity: 1;
+}
+
+.reveal {
+  transition: 0.4s 0.2s ease;
+  transform: translateY(50px);
+  opacity: 0;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(51, 51, 51, 0.585);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: appear 0.2s forwards;
+}
+
+.photo-lightbox img {
+  width: 300px;
+  height: 200px;
+}
+
+.btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-family: Poppins-light;
+  background: transparent;
+  outline: none;
+  border: 1px white solid;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  to {
+    opacity: 0;
+  }
+}
